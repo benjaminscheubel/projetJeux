@@ -6,3 +6,4 @@
 #   6- git status
 #   7- git merge feature/login
 #   8- git branch --no-merged
+#   9- blue
