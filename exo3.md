@@ -8,5 +8,6 @@
 #   8- git branch --no-merged
 #   9- git branch -d feature/login
 #   10- git checkout -b feature/logout git add . git commit -m git push
-#   11- git merge feature/logout Accept Both change git add . git commit -m git push
-#   12- 
+#   11- git merge feature/logout Accept Both change git add . git commit -m git push git branch -d feature/logout
+#   12- git checkout -b bugfix/login
+orange 
