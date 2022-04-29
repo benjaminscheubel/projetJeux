@@ -6,4 +6,10 @@
 #   6- git status
 #   7- git merge feature/login
 #   8- git branch --no-merged
+<<<<<<< HEAD
 #   9- blue
+=======
+#   9- git branch -d feature/login
+#   10- git chcekout -b feature/logout
+#   11- green
+>>>>>>> feature/logout
