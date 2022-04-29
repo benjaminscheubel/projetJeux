@@ -1,3 +1,1 @@
-TESTtest
-test push
-test branch git 
+Règle du jeux :
