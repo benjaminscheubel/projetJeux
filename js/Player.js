@@ -1,35 +1,39 @@
 class Player  {
+
   constructor(playerName) {
-      //player properties
+
       this.name=playerName;
       this.score = 100;
-      
       $('#' + this.name +'-score').html(this.score);
       this.initializePlayer();
+
   }
   
     fight = (nextPlayer) => {
+      //Activation du des boutons pour le prochain joueur
       nextPlayer.enableFight()
-      //set player fighting option to "attack"
+      
       this.fightingOption="attack";
   
-      //get the damage power of the player
+      //reçoit les dommages
       let damagePower = this.perso.damages;
   
-      //check next player fighting option
+      //Mode de jeux 
       if(nextPlayer.fightingOption==="defend")
         damagePower = (this.perso.damages/2);//if the next player is defending, the damage is divided by 2
   
       if(nextPlayer.score - damagePower > 0)
+      //Retrait du nombres de dommages au score
         nextPlayer.score = nextPlayer.score - damagePower;
-      else//if the next player has no score left, he lose
+      else
+      //Si le score est à 0 alors perdu
       {
         nextPlayer.score = 0
         if(nextPlayer.name == "playerTwo")
         $('#winner').html('Player 1');
         else
         $('#winner').html('Player 2');  
-        //display celebration panel
+        //Gagné 
         $('#CelebrationModal').modal('show');	
            
       }
@@ -37,12 +41,11 @@ class Player  {
       $('#' + nextPlayer.name +'-score').html(nextPlayer.score);
       $('#' + nextPlayer.name +'-visualScore').css("width", nextPlayer.score + "%").attr("aria-valuenow", nextPlayer.score);
   
-      //set next player fighting option to default ("attack")
+      
       nextPlayer.fightingOption="attack";
-      //switch players turn
-      // this.disableFight();
+     
       if(nextPlayer.score > 0) {
-      // nextPlayer.enableFight();
+      nextPlayer.enableFight();
       }
   }
   

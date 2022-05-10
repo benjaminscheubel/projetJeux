@@ -1,14 +1,15 @@
 $(document).ready(() => {
-  //button new game
+  //Bouton commencer une nouvelle partie
   $( "#new-game" ).click(() => {
-   
+    //Instanciation permier joueur
     let playerOne = new Player("playerOne");
+    //activation des boutons attaque et défense premier joueur
     playerOne.enableFight(playerOne)
-    //disableFight(playerOne);
-   
+    //Instanciation deuxième joueur
     let playerTwo = new Player("playerTwo");
+    //activation des boutons attaque et défense deuxième joueur
     playerTwo.enableFight(playerTwo)
-    //disableFight(playerTwo);
+    //Tour du joueur 1
     playerOne.turn =true;
 
     let perso = [
@@ -23,28 +24,26 @@ $(document).ready(() => {
     console.log(playerOne, playerTwo);
     
 
-  // player 1 fighting panel
-  //button attack for player 1
+  //Premier joueur appuie sur attack
   $( "#playerOne-attack" ).click(() => {
     playerOne.fight(playerTwo);
     playerOne.disableFight(playerOne);
   });
 
-  //button defend for player 1
+  //Premier joueur appuie sur défense
   $( "#playerOne-defend" ).click(() => {
     playerOne.fightingOption="defend";
     playerOne.fight(playerTwo);
     playerOne.disableFight(playerOne);
   });
 
-  // player2 fighting panel
-  //button attack for player 2
+  //Deuxième joueur appuie sur attack
   $( "#playerTwo-attack" ).click(() => {
     playerTwo.fight(playerOne);
     playerTwo.disableFight(playerTwo);
   });
 
-  //button defend for player 2
+ //Deuxième joueur appuie sur defend
   $( "#playerTwo-defend" ).click(() => {
     playerTwo.fightingOption="defend";
     playerTwo.fight(playerOne);
